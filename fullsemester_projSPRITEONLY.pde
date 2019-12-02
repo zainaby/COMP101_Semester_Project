@@ -4,6 +4,7 @@
 
 // no randomizer in this one.
 // all sprites are loaded in variables and startup. dependent on buttons and value changes to change sprite status. should probably use else statements
+//because my idea of moving the sprite off the screen to show the next one isn't working kms
 // but I'd figure I would figure that out after variables actually become changeable (because right now, all special sprites will show at once)
 // also takes a second to load? Idk whats up with that
 
