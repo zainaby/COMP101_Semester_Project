@@ -1,0 +1,8 @@
+//Sets the loss condition
+
+void lossCondition() { 
+  if (happinessValue <= 0 || wealthValue <= -50  || gradesValue < 69.50) { // The lose conditions are if the happiness value hit 0, wealth value drops too low into the negatives, or if your grade is below a C.
+    lose = true; //If the conditions are met above the loss condition becomes true.
+  }
+} 
+//Need to edit loss screen
