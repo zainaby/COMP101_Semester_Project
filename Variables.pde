@@ -24,4 +24,5 @@ float titleNounsYPos = 300; // sets the position of the words that are cycled th
 int titleNounArrayValue = 0; // used to as the index of the array for the title screen
 int activityPoints = 20; // used on a weekly basis
 boolean clickOnButton = false;
+boolean lose = false;
 // VARIABLES
