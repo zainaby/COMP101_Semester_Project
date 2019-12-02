@@ -2,7 +2,8 @@
 ///////////////////////////////////
 
 
-// Needs to activate every time 1 week passes = increment increases once (not affected by hourly time decreasing (168 hrs per week) because then it'll happen by hour).
+// Needs to activate every time 1 week passes = increment increases once (not affected by hourly time decreasing (168 hrs per week) because then it'll happen by hour)
+// EDIT: actually would it make more sense to make it appear when hours reach 0? idk if subtracting hours was a still a thing
 // Buttons are drawn but don't function as buttons, they're just text and rectangles right now. 
 // I decided repeats are ok, mostly because I didn't feel like telling it not to, and most of these can happen to someone more than once.
 // Buttons also need to have effects (ex: if button == yes, happinessvalue * .5, moneyvalue * -.7 or something idk that should be quick to toss in here)
