@@ -287,7 +287,7 @@ void random() {
     fill (255);
     text("Okay.", 475, 443);
         if (mousePressed && mouseX > 420 && mouseX < (420 +170) && mouseY > 400 && mouseY < (400 + 70)) {
-      text("You're happy", 100, 100);
+      text("fuck", 100, 100);
     }
   }
 }
