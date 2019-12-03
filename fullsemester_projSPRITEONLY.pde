@@ -2,11 +2,9 @@
 ///////////////////////
 
 
+// FIXED!! Sprites now show up when certain variables are reached!
 // no randomizer in this one.
-// all sprites are loaded in variables and startup. dependent on buttons and value changes to change sprite status. should probably use else statements
-//because my idea of moving the sprite off the screen to show the next one isn't working kms
-// but I'd figure I would figure that out after variables actually become changeable (because right now, all special sprites will show at once)
-// also takes a second to load? Idk whats up with that
+// takes a second to load? Idk whats up with that
 
 
 ///////////////////////
@@ -28,7 +26,7 @@ int happinessValue = 0; // keeps track of player’s happiness
 float wealthValue = 0; // defines the player’s wealth
 float gradesValue = 0; // keeps track of player’s grades
 int backgroundValue = 0; // current background value on screen
-float randNum = int(random(0, 0));
+float randNum = int(random(0, 10));
 ; // weekly random event generator
 int weekNumber = -1; // keeps track of weeks passed
 float buttonX; // a button's X value
@@ -67,7 +65,8 @@ void setup() {
 } // setup()
 
 void draw() {
-  weeksNumber(); // this progresses the game
+  weeksNumber(); 
+  randomEvents(randNum);//
 } // draw()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -96,15 +95,16 @@ void drawHUD() { // ((UNFINISHED))
     image(introvertnormal, -30, 40, introvertnormal.width/3.5, introvertnormal.height/3.5);
   } // if class is introvert, open with introvertnormal sprite
 
-  /// turn into else statements
+  if ((characterPersonality == 0)&&(wealthValue >= 100)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(introvertrich, -30, 40, introvertrich.width/3.5, introvertrich.height/3.5);
+  } // if class is introvert and high wealth ($90), show high wealth introvert sprite
 
-  ///    if ((characterPersonality == 0)||(happinessValue <= 50)) {
-  ///    image(introvertlowhealth, -30, 40, introvertlowhealth.width/3.5, introvertlowhealth.height/3.5);
-  ///  } // if class is introvert and low health (50%), show low health introvert sprite
+  if ((characterPersonality == 0)&&(happinessValue <= 50)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(introvertlowhealth, 10, 50, introvertlowhealth.width/4, introvertlowhealth.height/4);
+  } // if class is introvert and low health (50%), show low health introvert sprite
 
-  ///          if ((characterPersonality == 1)||(wealthValue >= 90)) {
-  ///    image(introvertrich, -10, 80, introvertrich.width/3.5, introvertrich.height/3.5);
-  ///  } // if class is introvert and high wealth ($90), show high wealth introvert sprite
 
 
 
@@ -113,15 +113,16 @@ void drawHUD() { // ((UNFINISHED))
     image(extrovertnormal, -10, 80, extrovertnormal.width/4, extrovertnormal.height/4);
   } // if class is extrovert, open with extrovertnormal sprite
 
-  ///turn into else statements
+  if ((characterPersonality == 1)&&(wealthValue >= 100)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(extrovertrich, -10, 80, extrovertrich.width/4, extrovertrich.height/4);
+  } // if class is extrovert and high wealth ($90), show high wealth extrovert sprite
 
-  ///      if ((characterPersonality == 1)||(happinessValue <= 50)) {
-  ///    image(extrovertlowhealth, -10, 80, extrovertlowhealth.width/4, extrovertlowhealth.height/4);
-  ///  } // if class is extrovert and low health (50%), show low health extrovert sprite
+  if ((characterPersonality == 1)&&(happinessValue <= 30)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(extrovertlowhealth, 90, 100, extrovertlowhealth.width/4.5, extrovertlowhealth.height/4.5);
+  } // if class is extrovert and low health (50%), show low health extrovert sprite
 
-  ///        if ((characterPersonality == 1)||(wealthValue >= 90)) {
-  ///    image(extrovertrich, -10, 80, extrovertrich.width/4, extrovertrich.height/4);
-  ///  } // if class is extrovert and high wealth ($90), show high wealth extrovert sprite
 
 
 
