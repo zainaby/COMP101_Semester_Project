@@ -2,7 +2,9 @@
 ///////////////////////
 
 
-// randomizer in this one
+// FIXED!! Sprites now show up when certain variables are reached!
+// randomizer in this one.
+// takes a second to load? Idk whats up with that
 
 
 ///////////////////////
@@ -93,15 +95,16 @@ void drawHUD() { // ((UNFINISHED))
     image(introvertnormal, -30, 40, introvertnormal.width/3.5, introvertnormal.height/3.5);
   } // if class is introvert, open with introvertnormal sprite
 
-  /// turn into else statements
+  if ((characterPersonality == 0)&&(wealthValue >= 100)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(introvertrich, -30, 40, introvertrich.width/3.5, introvertrich.height/3.5);
+  } // if class is introvert and high wealth ($90), show high wealth introvert sprite
 
-  ///    if ((characterPersonality == 0)||(happinessValue <= 50)) {
-  ///    image(introvertlowhealth, -30, 40, introvertlowhealth.width/3.5, introvertlowhealth.height/3.5);
-  ///  } // if class is introvert and low health (50%), show low health introvert sprite
+  if ((characterPersonality == 0)&&(happinessValue <= 50)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(introvertlowhealth, 10, 50, introvertlowhealth.width/4, introvertlowhealth.height/4);
+  } // if class is introvert and low health (50%), show low health introvert sprite
 
-  ///          if ((characterPersonality == 1)||(wealthValue >= 90)) {
-  ///    image(introvertrich, -10, 80, introvertrich.width/3.5, introvertrich.height/3.5);
-  ///  } // if class is introvert and high wealth ($90), show high wealth introvert sprite
 
 
 
@@ -110,15 +113,16 @@ void drawHUD() { // ((UNFINISHED))
     image(extrovertnormal, -10, 80, extrovertnormal.width/4, extrovertnormal.height/4);
   } // if class is extrovert, open with extrovertnormal sprite
 
-  ///turn into else statements
+  if ((characterPersonality == 1)&&(wealthValue >= 100)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(extrovertrich, -10, 80, extrovertrich.width/4, extrovertrich.height/4);
+  } // if class is extrovert and high wealth ($90), show high wealth extrovert sprite
 
-  ///      if ((characterPersonality == 1)||(happinessValue <= 50)) {
-  ///    image(extrovertlowhealth, -10, 80, extrovertlowhealth.width/4, extrovertlowhealth.height/4);
-  ///  } // if class is extrovert and low health (50%), show low health extrovert sprite
+  if ((characterPersonality == 1)&&(happinessValue <= 30)) {
+    image(librarybg, 0, 0, librarybg.width/3.5, librarybg.height/3.5);
+    image(extrovertlowhealth, 90, 100, extrovertlowhealth.width/4.5, extrovertlowhealth.height/4.5);
+  } // if class is extrovert and low health (50%), show low health extrovert sprite
 
-  ///        if ((characterPersonality == 1)||(wealthValue >= 90)) {
-  ///    image(extrovertrich, -10, 80, extrovertrich.width/4, extrovertrich.height/4);
-  ///  } // if class is extrovert and high wealth ($90), show high wealth extrovert sprite
 
 
 
@@ -130,6 +134,7 @@ void drawHUD() { // ((UNFINISHED))
   rect(775, 350, 225, 25); // top right rectangle (next to trangle)
   drawStats(); // draw the stat meter in the bottom left
 } // drawHUD
+
 
 // This function draws all of the bars on the bottom left to the screen
 void drawStats() { // ((FINISHED))
