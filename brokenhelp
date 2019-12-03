@@ -1,4 +1,4 @@
-float randNum = int(random(0, 1)); //actual number randomizer
+float randNum = int(random(1)); //actual number randomizer
 
 void setup() {
 
