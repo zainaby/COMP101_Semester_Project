@@ -1,0 +1,53 @@
+float randNum = int(random(0, 1)); //actual number randomizer
+
+void setup() {
+
+  size(1000, 750); // sets size of window
+  background(0); // TEMPORARY
+  noStroke(); // remove outline
+  fill(50); // hub
+  triangle(0, 400, 0, 750, 500, 750); // left side triangle
+  rect(0, 550, 1000, 250); // bottom rectangle
+  rect(750, 375, 250, 325); // right rectangle
+  triangle(750, 375, 775, 350, 775, 375); // right trangle
+  rect(775, 350, 225, 25); // top right rectangle (next to trangle)
+}
+
+void draw() {
+  random();
+}
+
+
+
+void random() {
+  fill(100);
+  rect(75, 150, 850, 350);
+  textSize(24);
+  fill(255);
+
+  if (randNum == 0) {
+    text("You met Chip, the emotional support puppy!\nYou feel a lot happier.", 95, 200);
+    fill(120);
+    rect (420, 400, 170, 70);
+    fill (255);
+    text("Okay!", 475, 443);
+    if (mousePressed && mouseX > 420 && mouseX < (420 +170) && mouseY > 400 && mouseY < (400 + 70)) {
+      text("You're happy", 100, 100);
+    }
+  }
+  
+
+
+  if (randNum == 1) {
+    text("Pop quiz! What's the cosine of 90 degrees?", 95, 200);
+    fill(120);
+    rect (220, 400, 170, 70);
+    rect (580, 400, 170, 70);
+    fill (255);
+    text("Root 3!", 265, 443);
+    text("Zero!", 635, 443);
+    if (mousePressed && mouseX > 220 && mouseX < (220 +170) && mouseY > 400 && mouseY < (400 + 70)) { 
+      text("WRONG", 100, 100);
+    }
+  }
+  }
