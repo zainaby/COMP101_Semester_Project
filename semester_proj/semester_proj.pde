@@ -86,6 +86,9 @@ void setup() {
 } // setup()
 
 void draw() {
+drawHappiness();
+  drawWealth();
+  drawGrades();
   weeksNumber( Hoursleft); 
  // Hourcounter(); //I dont think I used this
 //  timecounter(); //Works wonky, needs help
@@ -312,6 +315,9 @@ void reusedButton(int reusedButton) { // ((UNFINISHED))
     createButton(790, 375); // button preset
     fill(0); // black text
     text("Go to class", 805, 410); // class text
+     happinessValue -= 5;
+    gradesValue += 1;
+    wealthValue -= 1;
   } // reusedButton 1
 
 
@@ -319,6 +325,9 @@ void reusedButton(int reusedButton) { // ((UNFINISHED))
     createButton(790, 450); // button preset
     fill(0); // black
     text("Study", 840, 483); // study text
+    happinessValue -= 5;
+    gradesValue += 5;
+    wealthValue -= 2;
   } // reusedButton 2
 
 
@@ -326,6 +335,9 @@ void reusedButton(int reusedButton) { // ((UNFINISHED))
     createButton(790, 525); // button preset
     fill(0); // black
     text("Socialize", 822, 560); // socialize text
+    happinessValue += 5;
+    gradesValue -= 1;
+    wealthValue -= 1;
   } // reusedButton 3
 
 
@@ -333,6 +345,9 @@ void reusedButton(int reusedButton) { // ((UNFINISHED))
     createButton(790, 600); // button preset
     fill(0); // black
     text("Get food", 822, 635); // food text
+     happinessValue += 5;
+    gradesValue -= 0;
+    wealthValue -= 4;
   } // reusedButton 4
 
 
@@ -340,6 +355,9 @@ void reusedButton(int reusedButton) { // ((UNFINISHED))
     createButton(790, 675); // button preset
     fill(0); // black
     text("Sleep", 842, 708); // sleep text
+    happinessValue += 8;
+    gradesValue -= 2;
+    wealthValue += 0;
   } // reusedButton 5
 
 
